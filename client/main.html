@@ -3,23 +3,35 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
-  {{> info}}
+  <header>
+    {{ > monHeader }}
+  </header>
+  <section>
+    {{ > monBody }}
+  </section>
+  <footer>
+    {{ > monFooter }}
+  </footer>
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="monHeader">
+  <div>
+    <h3>Header</h3>
+  </div>
+</template>
+<template name="monBody">
+  <div>
+    <h3>Body</h3>
+    <p>Je suis {{nom}} et j'ai {{age}} ans.</p>
+    <p>Projet : {{projet}}</p>
+    <button class="btn-alert">Alert</button>
+    <button class="btn-session">Session</button>
+    <button class="btn-player">Add Player</button>
+  </div>
+</template>
+<template name="monFooter">
+  <div>
+    <h3>Footer</h3>
+  </div>
 </template>
 
-<template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
-  </ul>
-</template>
