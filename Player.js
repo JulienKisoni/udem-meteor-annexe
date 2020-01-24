@@ -7,11 +7,21 @@ if(Meteor.isServer) {
         return PlayerCollection.find();
     });
     Meteor.methods({
-        'add-player': function() {
+        'add-player': function(nom, age) {
             return PlayerCollection.insert({
-                nom: 'Marc',
-                age: '19'
+                nom,
+                age
             });
+        },
+        'remove-player': function(_id) {
+            return PlayerCollection.remove({_id});
+        },
+        'update-player': function(_id, age) {
+            return PlayerCollection.update({
+                _id
+            }, {
+                $set: { age: age + 1}
+            })
         }
     });
     // PlayerCollection.allow({
